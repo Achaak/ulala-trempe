@@ -1,10 +1,10 @@
 $(document).ready(function() {
-    $(".trempe-item").change(function(_e) {
+    $(".trempe-item").keyup(function(_e) {
         checkNewValue();
     });
 
 
-    $(".stat-value input").change(function(_e) {
+    $(".stat-value input").keyup(function(_e) {
         getValueStat();
         checkNewValue();
     });
@@ -12,6 +12,27 @@ $(document).ready(function() {
 
     $(".btn-validate").click(function(_e) {
         addValue();
+
+        // Trigger
+        $(".trempe-val-actual").trigger("keyup");
+    });
+
+    $(".trempe-val-actual, .trempe-val-max").keyup(function(_e) {
+        // Get target
+        var _target = $(_e.currentTarget);
+
+        // Get value
+        var stat_max    = parseInt(_target.closest(".trempe").find(".trempe-val-max").val());
+        var stat_actuel = parseInt(_target.closest(".trempe").find(".trempe-val-actual").val());
+
+        // Set width of the bar
+        var _bar = _target.closest(".trempe").find(".trempe-bar .bar");
+        var _bar_ctner = _target.closest(".trempe").find(".trempe-bar");
+
+        // Calcul
+        var _pourc = (((100/stat_max)*stat_actuel)/100);
+        if (_pourc > 1) _pourc = 1;
+        _bar.css("width", _bar_ctner.width() * _pourc );
     });
 });
 

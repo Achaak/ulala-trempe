@@ -4,11 +4,31 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>Your Website</title>
+
+	<link rel="stylesheet" href="style.css">
+
+	<!-- META -->
+	<meta charset='utf-8' />
+	<meta name='description', content='"#{opts.description}' />
+	<meta name='viewport', content='width=device-width, initial-scale=1' />
+	<meta http-equiv='X-UA-Compatible', content='IE=edge,chrome=1' />
+	<meta name="robots" content="index,follow" />
+
+	<!-- ICON -->
+	<link rel="icon" href="#{opts.hrefIcon}" />
+
+	<!-- OG -->
+	<meta property="og:title"       content="#{opts.openGraph.title}" />
+	<meta property="og:description" content="#{opts.openGraph.description}" />
+	<meta property="og:image"       content="#{opts.openGraph.image}" />
+	<meta property="og:type"        content="#{opts.openGraph.type}" />
+	<meta property="og:url"         content="#{opts.openGraph.url}" />
 </head>
 
 <body>
 
 	<header>
+		<h1>Trempe calculator</h1>
 	</header>
 
 
@@ -18,62 +38,83 @@
 	
 	<section>
 	
-		<article>
-			<div class="trempe-1">
-				<select class="trempe-item trempe-stat">
-					<option value="Armor">Armor</option>
-					<option value="ATK">ATK</option>
-					<option value="Block">Block</option>
-					<option value="Crit">Crit</option>
-					<option value="Evasion">Evasion</option>
-					<option value="Hit">Hit</option>
-					<option value="Tenacity">Tenacity</option>
-				</select>
-	
-				<input type="number" class="trempe-item trempe-val-actual">
-				<input type="number" class="trempe-item trempe-val-max">
+		<article class="stats-validator">
+			<div class="trempe trempe-1">
+				<div class="trempe-top">
+					<select class="trempe-item trempe-stat">
+						<option value="Armor">Armor</option>
+						<option value="ATK">ATK</option>
+						<option value="Block">Block</option>
+						<option value="Crit">Crit</option>
+						<option value="Evasion">Evasion</option>
+						<option value="Hit">Hit</option>
+						<option value="Tenacity">Tenacity</option>
+					</select>
+		
+					<div class="trempe-val-actual-ctner">
+						<input type="number" class="trempe-item trempe-val-actual">
+					</div>
+					<input type="number" class="trempe-item trempe-val-max">
+				</div>
 
-				<div class="trempe-bar"></div>
+				<div class="trempe-bar">
+					<div class="bar-bg"></div>
+					<div class="bar"></div>
+				</div>
 
 				<input type="number" class="trempe-item trempe-val-new">
 			</div>
 
 			
-			<div class="trempe-2">
-				<select class="trempe-item trempe-stat">
-					<option value="Armor">Armor</option>
-					<option value="ATK">ATK</option>
-					<option value="Block">Block</option>
-					<option value="Crit">Crit</option>
-					<option value="Evasion">Evasion</option>
-					<option value="Hit">Hit</option>
-					<option value="Tenacity">Tenacity</option>
-				</select>
-	
-				<input type="number" class="trempe-item trempe-val-actual">
-				<input type="number" class="trempe-item trempe-val-max">
+			<div class="trempe trempe-2">
+				<div class="trempe-top">
+					<select class="trempe-item trempe-stat">
+						<option value="Armor">Armor</option>
+						<option value="ATK">ATK</option>
+						<option value="Block">Block</option>
+						<option value="Crit">Crit</option>
+						<option value="Evasion">Evasion</option>
+						<option value="Hit">Hit</option>
+						<option value="Tenacity">Tenacity</option>
+					</select>
+		
+					<div class="trempe-val-actual-ctner">
+						<input type="number" class="trempe-item trempe-val-actual">
+					</div>
+					<input type="number" class="trempe-item trempe-val-max">
+				</div>
 
-				<div class="trempe-bar"></div>
+				<div class="trempe-bar">
+					<div class="bar-bg"></div>
+					<div class="bar"></div>
+				</div>
 
 				<input type="number" class="trempe-item trempe-val-new">
 			</div>
 
 
-			<div class="trempe-3">
-				<select class="trempe-item trempe-stat">
-					<option value="Armor">Armor</option>
-					<option value="ATK">ATK</option>
-					<option value="Block">Block</option>
-					<option value="Crit">Crit</option>
-					<option value="Evasion">Evasion</option>
-					<option value="Hit">Hit</option>
-					<option value="Tenacity">Tenacity</option>
-				</select>
-	
-				<input type="number" class="trempe-item trempe-val-actual">
-				<input type="number" class="trempe-item trempe-val-max">
+			<div class="trempe trempe-3">
+				<div class="trempe-top">
+					<select class="trempe-item trempe-stat">
+						<option value="Armor">Armor</option>
+						<option value="ATK">ATK</option>
+						<option value="Block">Block</option>
+						<option value="Crit">Crit</option>
+						<option value="Evasion">Evasion</option>
+						<option value="Hit">Hit</option>
+						<option value="Tenacity">Tenacity</option>
+					</select>
+		
+					<div class="trempe-val-actual-ctner">
+						<input type="number" class="trempe-item trempe-val-actual">
+					</div>
+					<input type="number" class="trempe-item trempe-val-max">
+				</div>
 
-				<div class="trempe-bar"></div>
+				<div class="trempe-bar">
+					<div class="bar-bg"></div>
+					<div class="bar"></div>
+				</div>
 
 				<input type="number" class="trempe-item trempe-val-new">
 			</div>
@@ -83,7 +124,7 @@
         </article>
 
 			
-		<article>
+		<article class="stats-value">
 			<div class="stat-value stat-value-Armor">
 				<span>Armor</span>
 				<input type="number" value="1">
@@ -118,6 +159,8 @@
 				<span>Tenacity</span>
 				<input type="number" value="1">
 			</div>
+
+			<div class="stat-value"></div>
 
 		</article>
 		
